@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block meta %}
+<style type="text/css" media="screen">
+.datagrid tr:nth-child(even) {
+background: #CCC;
+}
+.datagrid td {
+padding-left:1em;
+padding-right:1em;
+}
+</style>
+{% endblock  %}
+{% block header %}
+<h1>Bank Import Categories</h1>
+{% endblock %}
+{% block content %}
+<table border='0' cellspacing='0' class='datagrid'>
+<tr>
+<td>Id</td>
+<td>Payee</td>
+<td>Category</td>
+<td>Regex</td>
+</tr>
+{% for c in categories %}
+<tr>
+<td>{{c.id}}</td>
+<td>{{c.payee}}</td>
+<td>{{c.category}}</td>
+<td>{{c.regex}}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}
+
