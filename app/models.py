@@ -9,4 +9,8 @@ class Category(db.Model):
         self.payee = payee
         self.category = category
         self.regex = regex
-
+    def serialize(self):
+        return {"id": self.id,
+                "payee": self.payee,
+                "category": self.category,
+                "regex": self.regex}

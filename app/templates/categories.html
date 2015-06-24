@@ -9,11 +9,14 @@ padding-left:1em;
 padding-right:1em;
 }
 </style>
+<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js'></script>
+
 {% endblock  %}
 {% block header %}
 <h1>Bank Import Categories</h1>
 {% endblock %}
 {% block content %}
+<div ng-app='CategoryApp' ng-controller='CategoryController'>
 <table border='0' cellspacing='0' class='datagrid'>
 <tr>
 <td>Id</td>
@@ -21,14 +24,16 @@ padding-right:1em;
 <td>Category</td>
 <td>Regex</td>
 </tr>
-{% for c in categories %}
-<tr>
+<tr ng-repeat='c in categories'>
+{% raw %}
 <td>{{c.id}}</td>
 <td>{{c.payee}}</td>
 <td>{{c.category}}</td>
 <td>{{c.regex}}</td>
+{% endraw %}
 </tr>
-{% endfor %}
 </table>
+</div>
+<script src='/static/js/category.js'></script>
 {% endblock %}
 
