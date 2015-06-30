@@ -1,0 +1,14 @@
+<form name='categoryForm'>
+<strong>Category Maint</strong><br>
+<label for='payee'>Payee</label>
+<input type='text' size='20' name='payee' ng-model='category.payee'>
+<br>
+<label for='category'>Category</label>
+<input type='text' size='20' name='category' ng-model='category.category'>
+<br>
+<label for='regex'>Regex</label>
+<input type='text' size='20' name='regex' ng-model='category.regex'>
+<br>
+<input type="button" value="Save" ng-click='saveCategory(category)'/>
+<input type="button" value="Cancel" ng-click='cancelForm()'/>
+</form>

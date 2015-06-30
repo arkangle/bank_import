@@ -1,0 +1,17 @@
+<a href='#/add-category'>Add New Category</a>
+<table border='0' cellspacing='0' class='datagrid'>
+<tr>
+<td>Id</td>
+<td>Payee</td>
+<td>Category</td>
+<td>Regex</td>
+<td>&nbsp;</td>
+</tr>
+<tr ng-repeat='c in categories'>
+<td>{{c.id}}</td>
+<td>{{c.payee}}</td>
+<td>{{c.category}}</td>
+<td>{{c.regex}}</td>
+<td><a href='#/edit-category/{{c.id}}'>Edit</a> <a href="" ng-click='deleteCategory(c.id)'>Delete</a></td>
+</tr>
+</table>
